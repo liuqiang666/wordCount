@@ -3,8 +3,6 @@
 
 #include "stdafx.h"
 #include "string"
-#include "stdio.h"
-#include "string"
 #include "iostream"
 #include "fstream"
 
@@ -106,8 +104,6 @@ void wordCount()
 
 int main(int argc, char *argv[])
 {
-	cout << "argc:" << argc << endl;
-	
 	char *resultFile = "result.txt", *fileName = NULL;
  
 	for (int i = 0; i < argc; i++)
@@ -131,8 +127,7 @@ int main(int argc, char *argv[])
 		cout << "input file was needed" << endl;
 		return 0;
 	}
-	cout << fileName << endl;
-	cout << resultFile << endl;
+	
 	file = fopen(fileName, "r");
 	if (file == NULL)
 	{
