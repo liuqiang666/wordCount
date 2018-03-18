@@ -72,6 +72,7 @@ bool isSeparator(char a)
 }
 
 
+
 void wordCount()
 {
 	while (!feof(file))
@@ -107,29 +108,31 @@ int main(int argc, char *argv[])
 {
 	cout << "argc:" << argc << endl;
 	
-	char *resultFile="result.txt", *fileName = NULL;
+	char *resultFile = "result.txt", *fileName = NULL;
  
 	for (int i = 0; i < argc; i++)
 	{
-		if (argv[i] == "-o")
+		if (strcmp(argv[i], "-o") == 0)
 		{
 			fileName = argv[i - 1];
 			if (i < argc - 1)
 				resultFile = argv[i + 1];
 			else
 			{
-				cout << "未指定输出文件!" << endl;
+				cout << "output file was needed" << endl;
 				return 0;
 			}
 		}
-		else if (i == argc - 1)
+		else if (i == argc - 1 && fileName == NULL)
 			fileName = argv[i];
 	}
 	if (fileName == NULL)
 	{
-		cout << "未指定输入文件！" << endl;
+		cout << "input file was needed" << endl;
 		return 0;
 	}
+	cout << fileName << endl;
+	cout << resultFile << endl;
 	file = fopen(fileName, "r");
 	if (file == NULL)
 	{
@@ -143,27 +146,25 @@ int main(int argc, char *argv[])
 	resFile.open(resultFile, ios_base::out);
 	for (int i = 0; i < argc; i++)
 	{
-		cout << argv[i] << endl;
-		
-		if (argv[i] == "-c")
+		if (strcmp(argv[i], "-c") == 0)
 		{
-			cout << "字符数：" << chars << endl;
+			cout << "char count:" << chars << endl;
 			if (resFile.is_open())
 			{
 				resFile << fileName << ", 字符数：" << chars << endl;
 			}
 		}
-		else if (argv[i] == "-w")
+		else if (strcmp(argv[i], "-w") == 0)
 		{
-			cout << "单词数：" << words << endl;
+			cout << "word count:" << words << endl;
 			if (resFile.is_open())
 			{
 				resFile << fileName << ", 单词数：" << words << endl;
 			}
 		}
-		else if (argv[i] == "-l")
+		else if (strcmp(argv[i], "-l") == 0)
 		{
-			cout << "总行数：" << lines << endl;
+			cout << "line count:" << lines << endl;
 			if (resFile.is_open())
 			{
 				resFile << fileName << ", 总行数：" << lines << endl;
