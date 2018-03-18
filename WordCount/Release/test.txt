@@ -1,0 +1,6 @@
+bool isSpace(char a)
+{
+	if (a ==' ')
+		return true;
+	return false;
+}
