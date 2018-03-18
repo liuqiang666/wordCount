@@ -27,4 +27,7 @@
 *.lib
 
 .vs
-
+/WordCount/Release/
+/WordCount/WordCount/Release/
+/WordCount/WordCount/Debug/
+/WordCount/WordCount/x64/
