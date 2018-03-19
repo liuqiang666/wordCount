@@ -1,0 +1,3 @@
+D:\wordCount\test.txt, 字符数：182
+D:\wordCount\test.txt, 单词数：18
+D:\wordCount\test.txt, 总行数：16
