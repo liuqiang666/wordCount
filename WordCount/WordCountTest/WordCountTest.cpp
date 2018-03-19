@@ -66,7 +66,7 @@ void test7()//测试参数重复
 {
 	cout << "testcase7:" << endl;
 	int argc = 4;
-	char *argv[] = { "WordCountTest.exe", "-c", "-c", "D:\\wordCount\\tes.txt" };
+	char *argv[] = { "WordCountTest.exe", "-c", "-c", "D:\\wordCount\\test.txt" };
 	int result = count(argc, argv);
 	assert(result == 5);
 }
@@ -75,7 +75,7 @@ void test8()//'-o'参数出现在输入文件之前
 {
 	cout << "testcase8:" << endl;
 	int argc = 6;
-	char *argv[] = { "WordCountTest.exe", "-c", "-o", "-l" , "D:\\wordCount\\tes.txt" , "outfile.txt" };
+	char *argv[] = { "WordCountTest.exe", "-c", "-o", "-l" , "D:\\wordCount\\test.txt" , "outfile.txt" };
 	int result = count(argc, argv);
 	assert(result == 6);
 }
@@ -84,7 +84,7 @@ void test9()//测试空文件
 {
 	cout << "testcase9:" << endl;
 	int argc = 7;
-	char *argv[] = { "WordCountTest.exe", "-c", "-w", "-l" , "D:\\wordCount\\test8.txt", "-o" , "outfile.txt" };
+	char *argv[] = { "WordCountTest.exe", "-c", "-w", "-l" , "D:\\wordCount\\test9.txt", "-o" , "outfile.txt" };
 	int result = count(argc, argv);
 	assert(result == 0);
 }
@@ -93,7 +93,7 @@ void test10()//测试只含有',', ' ' 的文件
 {
 	cout << "testcase10:" << endl;
 	int argc = 7;
-	char *argv[] = { "WordCountTest.exe", "-c", "-w", "-l" , "D:\\wordCount\\test9.txt", "-o" , "outfile.txt" };
+	char *argv[] = { "WordCountTest.exe", "-c", "-w", "-l" , "D:\\wordCount\\test10.txt", "-o" , "outfile.txt" };
 	int result = count(argc, argv);
 	assert(result == 0);
 }
